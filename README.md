@@ -3,8 +3,16 @@
 </p>
 
 # Music
+> The *only* music extension you need.
 
-> Apple music extension
+![recommendations](./metadata/music-1.png)
+> Recommendations
 
-![sc1](./assets/screnshot-1.png)
-![sc2](./assets/screnshot-2.png)
+![recently-played](./metadata/music-2.png)
+> Recently Played
+
+![quick-actions](./metadata/music-3.png)
+> Quick Actions
+
+![menu-bar](./metadata/music-4.png)
+> Menu bar player
