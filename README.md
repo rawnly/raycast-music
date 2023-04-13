@@ -1,18 +1,14 @@
-<p align="center" style="display:flex">
-	<img width="50" src="./assets/icon.png">
-</p>
+# Raycast Music
+> The *only* Music extension you need
 
-# Music
-> The *only* music extension you need.
+![](./metadata/music-1.png)
 
-![recommendations](./metadata/music-1.png)
-> Recommendations
+## How to test locally
 
-![recently-played](./metadata/music-2.png)
-> Recently Played
+1. Clone the repo 
+2. Run `npm install`
+3. Run `npm run dev`
+4. Enjoy
 
-![quick-actions](./metadata/music-3.png)
-> Quick Actions
-
-![menu-bar](./metadata/music-4.png)
-> Menu bar player
+## Contributing
+See [CONTRIBUTING](./CONTRIBUTING.md)
