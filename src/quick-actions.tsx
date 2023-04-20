@@ -229,7 +229,7 @@ export default function QuickActions() {
       disabled: isMusicApiEnabled && requiresAuth,
     }, {
       id: 'view-in-music',
-      title: 'View in Muisc',
+      title: 'View in Music',
       icon: icon('expand'),
       description: 'View the current track in Music',
       requiredPlayerState: [
