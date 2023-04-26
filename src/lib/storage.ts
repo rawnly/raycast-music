@@ -23,6 +23,10 @@ export class Storage {
 		return LocalStorage.setItem(key.toString(), value);
 	}
 
+	static remove<K extends keyof IStorage = keyof IStorage>(key: K): Promise<void> {
+		return LocalStorage.removeItem(key.toString());
+	}
+
 	static get userToken() {
 		return Storage.get(StorageKeys.UserToken);
 	}
