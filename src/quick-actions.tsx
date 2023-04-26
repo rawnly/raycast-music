@@ -61,7 +61,6 @@ export default function QuickActions() {
   const { playerState, isLoadingPlayerState, revalidatePlayerState } = usePlayerState();
 
   const { isLoading: isLoadingCurrentlyPlaying, revalidateTrack, track: currentTrack } = useCurrentlyPlaying();
-  console.log(currentTrack);
 
   const requiresAuth: DisabledReason | false = match({ isLoggedIn, isMusicApiEnabled })
     .with({ isMusicApiEnabled: false }, () => "music-api-disabled")
@@ -151,6 +150,17 @@ export default function QuickActions() {
       onAction: handleResult(music.scripts.player.volume.decrease(), {
         errorMessage: "Failed to increase volume",
         successText: "Increased volume",
+      }),
+    },
+    {
+      id: "toggle-shuffle",
+      title: "Toggle Shuffle",
+      description: "Toggle shuffle",
+      requiredPlayerState: [PlayerState.PLAYING, PlayerState.PAUSED],
+      icon: Icon.Shuffle,
+      onAction: handleResult(music.scripts.player.shuffle.toggle, {
+        errorMessage: "Failed to toggle shuffle",
+        successText: "Toggled shuffle",
       }),
     },
     {
