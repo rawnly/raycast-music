@@ -46,17 +46,17 @@ export const createQueryString = <T extends object>(obj: T): string => {
 
 export const parseQueryString =
 	<T>() =>
-		(query: string): T => {
-			const entries = query.split("$BREAK").map((item) => item.split("="));
+	(query: string): T => {
+		const entries = query.split("$BREAK").map((item) => item.split("="));
 
-			const o: any = {};
+		const o: any = {};
 
-			for (const [k, v] of entries) {
-				o[k] = parseValue(v);
-			}
+		for (const [k, v] of entries) {
+			o[k] = parseValue(v);
+		}
 
-			return o as T;
-		};
+		return o as T;
+	};
 
 const parseValue = (value: string) => {
 	try {

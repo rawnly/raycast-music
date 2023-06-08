@@ -8,7 +8,7 @@ import { useState } from "react";
 import ViewPicker from "@/components/ViewPicker";
 
 export default function Recommendations() {
-	const [view, setView] = useState('list');
+	const [view, setView] = useState("list");
 
 	const { isLoggedIn, isLoading: isLoadingAuth, isMusicApiEnabled } = useAuth();
 	const { data: recommendations, isLoading: isLoadingRecommendations } = useCachedPromise(

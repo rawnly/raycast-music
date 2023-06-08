@@ -26,7 +26,6 @@ export default function Experimental_PlayLibraryTrack() {
 		popToRoot();
 	};
 
-
 	return (
 		<ListView
 			onPlay={play}

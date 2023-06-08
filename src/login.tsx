@@ -21,7 +21,7 @@ const contextSchema = z.object({
 	force: z.boolean().optional(),
 });
 
-export default async function Login({ launchContext, launchType }: LaunchProps) {
+export default async function Login({ launchContext }: LaunchProps) {
 	const context = contextSchema.safeParse(launchContext);
 
 	if (context.success && context.data.token) {

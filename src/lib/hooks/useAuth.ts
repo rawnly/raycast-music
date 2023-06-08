@@ -30,7 +30,7 @@ export function useAuthActions() {
 			primaryAction: {
 				title: "Login",
 				style: Alert.ActionStyle.Default,
-				onAction: login
+				onAction: login,
 			},
 		});
 

@@ -21,9 +21,9 @@ export const hasSFSymbolsInstalled = async () =>
 export const get_symbol = <K extends keyof typeof SFSymbols = keyof typeof SFSymbols>(key: K) => SFSymbols?.[key] ?? "";
 
 /**
-* Creates a deeplink to a Raycast command
-* Code snippet took by the spotify-beta extension
-*/
+ * Creates a deeplink to a Raycast command
+ * Code snippet took by the spotify-beta extension
+ */
 export function createDeeplink(commandName: string, payload?: Record<string, string | number | boolean>) {
 	const protocol = environment.raycastVersion.includes("alpha") ? "raycastinternal://" : "raycast://";
 	let deeplink = `${protocol}extensions/fedevitaledev/music/${commandName}`;
@@ -95,7 +95,7 @@ interface Options<T, E> {
 	errorMessage?: string | ((val: E) => string);
 	loading?: string;
 	closeView?: boolean;
-	onComplete?: () => void
+	onComplete?: () => void;
 }
 
 export const isMenuBar = () => environment.commandMode == "menu-bar";
@@ -123,11 +123,12 @@ function handleResult<T, E extends Error>(result: TE.TaskEither<E, T>, options?:
 		match(r)
 			.with({ _tag: "Right" }, ({ right: data }) => {
 				if (!options?.successText) {
-					toast.hide()
-					return
-				};
+					toast.hide();
+					return;
+				}
 
-				const message = typeof options.successText === "string" ? options.successText : options.successText(data);
+				const message =
+					typeof options.successText === "string" ? options.successText : options.successText(data);
 
 				if (closeView) {
 					showHUD(message);
@@ -139,7 +140,8 @@ function handleResult<T, E extends Error>(result: TE.TaskEither<E, T>, options?:
 			})
 			.with({ _tag: "Left" }, ({ left: error }) => {
 				if (options?.errorMessage) {
-					const message = typeof options.errorMessage === "string" ? options.errorMessage : options.errorMessage(error);
+					const message =
+						typeof options.errorMessage === "string" ? options.errorMessage : options.errorMessage(error);
 					showHUD(message);
 				}
 
@@ -147,8 +149,8 @@ function handleResult<T, E extends Error>(result: TE.TaskEither<E, T>, options?:
 			})
 			.exhaustive();
 
-		options?.onComplete?.()
-		toast.hide()
+		options?.onComplete?.();
+		toast.hide();
 
 		if (!closeView || r._tag === "Left") return;
 		closeMainWindow();

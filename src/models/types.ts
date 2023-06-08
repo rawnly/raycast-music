@@ -46,4 +46,4 @@ export enum SFSymbols {
 }
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-export type HintedString<T> = (string & {}) & T
+export type HintedString<T> = (string & {}) & T;

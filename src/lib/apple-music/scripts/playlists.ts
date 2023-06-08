@@ -37,19 +37,19 @@ const loopThroughPlaylists = (kind: PlaylistKind) => `
 
 export const play =
 	(shuffle = false) =>
-		(name: string): TE.TaskEither<ScriptError, string> =>
-			pipe(
-				player.shuffle.set(shuffle),
-				TE.chain(() => tell("Music", `play playlist "${name.trim()}"`))
-			);
+	(name: string): TE.TaskEither<ScriptError, string> =>
+		pipe(
+			player.shuffle.set(shuffle),
+			TE.chain(() => tell("Music", `play playlist "${name.trim()}"`))
+		);
 
 export const playById =
 	(shuffle = false) =>
-		(id: string) =>
-			pipe(
-				player.shuffle.set(shuffle),
-				TE.chain(() => tell("Music", `play (every playlist whose id is "${id}")`))
-			);
+	(id: string) =>
+		pipe(
+			player.shuffle.set(shuffle),
+			TE.chain(() => tell("Music", `play (every playlist whose id is "${id}")`))
+		);
 
 export const findPlaylist = (name: string) => tell("Music", `get id of every playlist whose name is "${name}"`);
 

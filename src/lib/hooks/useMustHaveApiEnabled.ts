@@ -12,14 +12,17 @@ export const askToEnableExperimentalApi = (onCancel?: () => void) =>
 			title: "Enable",
 			onAction: openExtensionPreferences,
 		},
-		dismissAction: typeof onCancel === 'function' ? {
-			title: "Cancel",
-			onAction: onCancel,
-		} : undefined,
+		dismissAction:
+			typeof onCancel === "function"
+				? {
+						title: "Cancel",
+						onAction: onCancel,
+				  }
+				: undefined,
 	});
 
 export default function useMustHaveApiEnabled(prompt = true) {
-	const nav = useNavigation()
+	const nav = useNavigation();
 
 	useEffect(() => {
 		if (Preferences.experimental_music_api || !prompt) return;

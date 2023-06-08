@@ -11,7 +11,7 @@ const preferencesSchema = z.object({
 	maxTitleLength: z.number({ coerce: true }).default(-1),
 	recommendations_displayAsList: z.boolean().default(false),
 	search_displayAsList: z.boolean().default(false),
-	experimental_music_api: z.boolean().default(true)
+	experimental_music_api: z.boolean().default(true),
 });
 
 export type IPreferences = z.infer<typeof preferencesSchema>;

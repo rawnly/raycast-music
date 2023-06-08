@@ -18,11 +18,11 @@ export const getAll = runScript(`
 				set trackId to the id of aTrack
 				set artistName to the artist of aTrack
 				set output to output & ${createQueryString({
-	id: "trackId",
-	name: "albumName",
-	artist: "artistName",
-	count: "trackCount",
-})} & "\n"
+					id: "trackId",
+					name: "albumName",
+					artist: "artistName",
+					count: "trackCount",
+				})} & "\n"
 			end if
 		end repeat
 	end tell
@@ -59,11 +59,11 @@ export const search = (search: string) => {
 
 export const play =
 	(shuffle = false) =>
-		(album: string) =>
-			pipe(
-				player.shuffle.set(shuffle),
-				TE.chain(() =>
-					runScript(`
+	(album: string) =>
+		pipe(
+			player.shuffle.set(shuffle),
+			TE.chain(() =>
+				runScript(`
 			tell application "Music"
 				if (exists playlist "Raycast DJ") then
 					delete playlist "Raycast DJ"
@@ -73,5 +73,5 @@ export const play =
 				play playlist "Raycast DJ"
 			end tell
 		`)
-				)
-			);
+			)
+		);

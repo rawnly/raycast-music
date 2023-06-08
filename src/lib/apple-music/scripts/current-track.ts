@@ -69,7 +69,7 @@ export const getCurrentTrack = (): TE.TaskEither<Error, Readonly<CurrentTrack>> 
 		duration: "trackDuration",
 		rating: "trackRating",
 		loved: "trackLoved",
-		disliked: "trackDisliked"
+		disliked: "trackDisliked",
 	});
 
 	// prettier-ignore

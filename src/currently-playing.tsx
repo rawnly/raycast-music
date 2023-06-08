@@ -5,12 +5,10 @@ import { match } from "ts-pattern";
 
 import * as music from "@/lib/apple-music/";
 
-import * as TE from "fp-ts/TaskEither";
 import { CurrentTrack } from "./lib/apple-music/scripts/current-track";
 import { Preferences } from "./lib/preferences";
 import { handleResult, promisify } from "./lib/utils";
 import { PlayerState } from "./models/types";
-import { flow } from "fp-ts/lib/function";
 
 function getTrack() {
 	return promisify(music.scripts.currentTrack.getCurrentTrack());
