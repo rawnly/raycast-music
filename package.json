@@ -1,12 +1,13 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "music",
-  "title": "Music",
+  "name": "music-beta",
+  "title": "Music (Beta)",
   "description": "Control the Apple Music app with your keyboard.",
   "icon": "icon.png",
   "author": "fedevitaledev",
   "contributors": [
-    "peterdev22"
+    "peterdev22",
+    "danpalmer"
   ],
   "license": "MIT",
   "categories": [
